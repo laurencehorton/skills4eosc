@@ -36,23 +36,24 @@ searches <-
 ```{r subset search strings}
 # If you need to search a different language, point to that specific column, i.e. "Search strings Denmark"
 search_strings <- searches %>%
-  select("Sample search strings")
+  select("Search strings Denmark") %>%
+  rename("Search strings" = 1)
 ```
 
 ```{r convert search strings to url text}
 # This converts the search strings into a string that can be added to the google search url.
-search_strings$`Sample search strings` <-
-  gsub(" \\[country\\]", " ", search_strings$`Sample search strings`)
-search_strings$`Sample search strings` <-
-  gsub(",", "OR", search_strings$`Sample search strings`)
-search_strings$`Sample search strings` <-
+search_strings$`Search strings` <-
+  gsub(" \\[country\\]", " ", search_strings$`Search strings`)
+search_strings$`Search strings` <-
+  gsub(",", "+OR", search_strings$`Search strings`)
+search_strings$`Search strings` <-
   trimws(
-    search_strings$`Sample search strings`,
+    search_strings$`Search strings`,
     which = c("both", "left", "right"),
     whitespace = "[ \t\r\n]"
   )
-search_strings$`Sample search strings` <-
-  gsub(" ", "+", search_strings$`Sample search strings`)
+search_strings$`Search strings` <-
+  gsub(" ", "+", search_strings$`Search strings`)
 ```
 
 ```{r split the search terms into character types}
@@ -90,7 +91,7 @@ Trustworthiness <- as.character(search_strings[27, ])
 search <- "https://duckduckgo.com/?q="
 ```
 
-```{r country codes for searching by national domains}
+```{r}
 # ISO 3166-1 alpha-3 country code and ccTLDs country code top-level domains
 AUT <- ":.AT"
 BEL <- ":.BE"
@@ -117,15 +118,15 @@ SVK <- ":.SK"
 SWE <- ":.SE"
 ```
 
-```{r point search to contry domain}
-# Remember to change country
-country <- GBR
+```{r}
+# Remember to match country to column country selected
+country <- DNK
 ```
 
 ```{r function for search}
 geturlname <- function(name) {
   h <- getCurlHandle()
-  z <- getURL(paste0(search, name, country), # Remove country if you're searching international domains
+  z <- getURL(paste0(search, name, country),
               followlocation = TRUE,
               curl = h)
   getCurlInfo(h)$effective.url # Stops a redirect to first link on the search
