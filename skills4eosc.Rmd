@@ -26,6 +26,7 @@ library(tidyverse)
 
 ```{r read google sheet into R}
 # Will need to authenticate to allow Tidyverse to access your google account.
+# Need to manually select the "See, edit, create and delete all your Google Sheets spreadsheets. Learn more" option when authenticating.
 searches <-
   read_sheet(
     "https://docs.google.com/spreadsheets/d/1VxjTdvWuc-E7dCDEaYosPeeL22wAvevPL5K3yO43L6g/edit#gid=0",
