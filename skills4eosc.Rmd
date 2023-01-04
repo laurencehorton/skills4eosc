@@ -29,6 +29,7 @@ library(tidyverse)
 searches <-
   read_sheet(
     "https://docs.google.com/spreadsheets/d/1VxjTdvWuc-E7dCDEaYosPeeL22wAvevPL5K3yO43L6g/edit#gid=0",
+    sheet = "Search strings and searches",
     skip = 2
   )
 ```
