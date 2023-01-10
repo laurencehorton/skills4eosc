@@ -38,7 +38,7 @@ searches <-
 ```{r subset search strings}
 # If you need to search a different language, point to that specific column, i.e. "Search strings Denmark"
 search_strings <- searches %>%
-  select("Search strings Denmark") %>%
+  select("Search strings UK") %>%
   rename("Search strings" = 1)
 ```
 
@@ -60,33 +60,23 @@ search_strings$`Search strings` <-
 
 ```{r split the search terms into character types}
 Artificial_intelligence <- as.character(search_strings[1, ])
-AI <- as.character(search_strings[2, ])
-Data_analytics <- as.character(search_strings[3, ])
-Data_curators <- as.character(search_strings[4, ])
-Data_sharing <- as.character(search_strings[5, ])
-Data_stewardship <- as.character(search_strings[6, ])
-Data_storage <- as.character(search_strings[7, ])
-FAIR_OR_FAIR_data <- as.character(search_strings[8, ])
-FAIR_data_management <- as.character(search_strings[9, ])
-High_performance <- as.character(search_strings[10, ])
-High_performance_computing <- as.character(search_strings[11, ])
-HPC <- as.character(search_strings[12, ])
-HPDA <- as.character(search_strings[13, ])
-Infrastructure_OR_e_infrastructure_OR_digital_infrastructure <-
-  as.character(search_strings[14, ])
-Knowledge_sharing_and_exchange <- as.character(search_strings[15, ])
-Open_access <- as.character(search_strings[16, ])
-Open_code_and_software <- as.character(search_strings[17, ])
-Open_science <- as.character(search_strings[18, ])
-Open_research <- as.character(search_strings[19, ])
-Replicability <- as.character(search_strings[20, ])
-Reproducibility <- as.character(search_strings[21, ])
-Reproducible_science <- as.character(search_strings[22, ])
-Research_data_management <- as.character(search_strings[23, ])
-Robust_and_rigorous_research <- as.character(search_strings[24, ])
-Scientific_integrity <- as.character(search_strings[25, ])
-Transparency <- as.character(search_strings[26, ])
-Trustworthiness <- as.character(search_strings[27, ])
+Data_analytics <- as.character(search_strings[2, ])
+Data_curators <- as.character(search_strings[3, ])
+Data_sharing <- as.character(search_strings[4, ])
+Data_stewardship <- as.character(search_strings[5, ])
+Data_storage <- as.character(search_strings[6, ])
+FAIR_OR_FAIR_data <- as.character(search_strings[7, ])
+High_performance_computing <- as.character(search_strings[8, ])
+High_performance_data_analytics <- as.character(search_strings[9, ])
+Open_access <- as.character(search_strings[10, ])
+Open_code_and_software <- as.character(search_strings[11, ])
+Open_science <- as.character(search_strings[12, ])
+Replicability <- as.character(search_strings[13, ])
+Reproducibility <- as.character(search_strings[14, ])
+Research_data_management <- as.character(search_strings[15, ])
+Research_infrastructure <- as.character(search_strings[16, ])
+Scientific_integrity <- as.character(search_strings[17, ])
+Transparency <- as.character(search_strings[18, ])
 ```
 
 ```{r search URL prefix}
@@ -122,7 +112,7 @@ SWE <- ":.SE"
 
 ```{r}
 # Remember to match country to column country selected
-country <- DNK
+country <- GBR
 ```
 
 ```{r function for search}
