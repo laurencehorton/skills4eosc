@@ -38,7 +38,7 @@ searches <-
 ```{r subset search strings}
 # If you need to search a different language, point to that specific column, i.e. "Search strings Denmark"
 search_strings <- searches %>%
-  select("Search strings UK") %>%
+  select("Search strings Ireland") %>%
   rename("Search strings" = 1)
 ```
 
@@ -112,7 +112,7 @@ SWE <- ":.SE"
 
 ```{r}
 # Remember to match country to column country selected
-country <- GBR
+country <- IRE
 ```
 
 ```{r function for search}
@@ -128,9 +128,6 @@ geturlname <- function(name) {
 ## Search terms
 ```{r artificial intelligence}
 browseURL(geturlname(Artificial_intelligence))
-```
-```{r AI}
-browseURL(geturlname(AI))
 ```
 ```{r data analytics}
 browseURL(geturlname(Data_analytics))
@@ -150,26 +147,11 @@ browseURL(geturlname(Data_storage))
 ```{r fair or fair data}
 browseURL(geturlname(FAIR_OR_FAIR_data))
 ```
-```{r fair data management}
-browseURL(geturlname(FAIR_data_management))
-```
-```{r high performance}
-browseURL(geturlname(High_performance))
-```
 ```{r high performance computing}
 browseURL(geturlname(High_performance_computing))
 ```
-```{r hpc}
-browseURL(geturlname(HPC))
-```
 ```{r hpda}
 browseURL(geturlname(HPDA))
-```
-```{r infastructure}
-browseURL(geturlname(Infrastructure_OR_e_infrastructure_OR_digital_infrastructure))
-```
-```{r knowledge sharing and exchange}
-browseURL(geturlname(Knowledge_sharing_and_exchange))
 ```
 ```{r open access}
 browseURL(geturlname(Open_access))
@@ -180,30 +162,21 @@ browseURL(geturlname(Open_code_and_software))
 ```{r open science}
 browseURL(geturlname(Open_science))
 ```
-```{r open research}
-browseURL(geturlname(Open_research))
-```
 ```{r replicability}
 browseURL(geturlname(Replicability))
 ```
 ```{r reporoducability}
 browseURL(geturlname(Reproducibility))
 ```
-```{r reproducable science}
-browseURL(geturlname(Reproducible_science))
-```
 ```{r research data management}
 browseURL(geturlname(Research_data_management))
 ```
-```{r robust and rigorus research}
-browseURL(geturlname(Robust_and_rigorous_research))
+```{r research infastructure}
+browseURL(geturlname(Research_infrastructure))
 ```
 ```{r scientific integrity}
 browseURL(geturlname(Scientific_integrity))
 ```
 ```{r transparency}
 browseURL(geturlname(Transparency))
-```
-```{r trustworthiness}
-browseURL(geturlname(Trustworthiness))
 ```
